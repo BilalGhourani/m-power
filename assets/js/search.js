@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    resizeForm();
     window.addEventListener('resize', function(event) {
         resizeForm();
     }, true);
