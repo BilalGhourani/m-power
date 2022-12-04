@@ -1,5 +1,14 @@
-
 $(document).ready(function () {
+
+    window.addEventListener('resize', function(event) {
+        resizeForm();
+    }, true);
+
+    function resizeForm(){
+        let height = window.innerHeight;
+        let formMaxHeight = 0.8 * height;
+        $(".car_info_form").attr("style", "max-height:" + formMaxHeight + "px;overflow-y: auto;");
+    }
 
     let params = (new URL(document.location)).searchParams;
     if (params.has("firstPlateNumber") && params.has("secondPlateNumber")) {
@@ -67,7 +76,7 @@ $(document).ready(function () {
         $("#chassis_number").text("655646444");
     }
 
-    $(".close").click(function (e) {
+    $(".close_btn").click(function (e) {
         document.querySelector("#myModal").style.display = "none";
     });
 
@@ -84,18 +93,13 @@ $(document).ready(function () {
 
 
     function generate(firstPlateNum, lastPlateNum) {
-        const qrCode = document.querySelector(".qr-code");
-        const img = document.querySelector(".qr-code img");
-        const button = document.querySelector(".qr-code button");
-        if (img != undefined) {
-            qrCode.removeChild(img);
+        let downloadBtnLink = document.querySelector(".qr-code button a");
+        let qrCodeImg = document.querySelector(".qr-code img");
+        if (qrCodeImg != null && qrCodeImg != undefined) {
+            document.querySelector(".qr-code canvas").remove();
+            qrCodeImg.remove();
         }
-        if (button != undefined) {
-            qrCode.removeChild(button);
-        }
-
         document.querySelector(".qr-code").style = "";
-
         var qrcode = new QRCode(document.querySelector(".qr-code"), {
             text: `https://m-power-garage.000webhostapp.com/search.html?firstPlateNumber=${firstPlateNum}&secondPlateNumber=${lastPlateNum}`,
             width: 180, //128
@@ -108,25 +112,16 @@ $(document).ready(function () {
         console.log(qrcode);
 
 
-        let download = document.createElement("button");
-        qrCode.appendChild(download);
-
         document.querySelector("#myModal").style.display = "block";
+        downloadBtnLink.setAttribute("download", "qr_code_linq.png");
 
-
-        let download_link = document.createElement("a");
-        download_link.setAttribute("download", "qr_code_linq.png");
-        download_link.innerText = "تحميل";//"Download";
-
-        download.appendChild(download_link);
-
-        if (document.querySelector(".qr-code img").getAttribute("src") == null) {
+        if (qrCodeImg.getAttribute("src") == null) {
             setTimeout(() => {
-                download_link.setAttribute("href", `${document.querySelector("canvas").toDataURL()}`);
+                downloadBtnLink.setAttribute("href", `${document.querySelector("canvas").toDataURL()}`);
             }, 300);
         } else {
             setTimeout(() => {
-                download_link.setAttribute("href", `${document.querySelector(".qr-code img").getAttribute("src")}`);
+                downloadBtnLink.setAttribute("href", `${document.querySelector(".qr-code img").getAttribute("src")}`);
             }, 300);
         }
     }

@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8">
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="M Power garage">
     <meta content="garage" name="keywords">
@@ -25,9 +25,9 @@
     <!-- Custom styles for this template-->
     <link href="assets/vendor/bootstrap/css/bootstrap.rtl.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <link href="assets/css/search.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style.min.css" rel="stylesheet">
+    <link href="assets/css/search.css" rel="stylesheet">
     <style>
         body {
             background-image: url('assets/img/background_new1.jpg');
@@ -42,34 +42,33 @@
 
 </head>
 <body class="background-image">
-<div class="container" style="background-color: rgba(0,0,0,0.74); border-radius: 15px">
+<div class="container container_fill_parent" style="background-color: rgba(0,0,0,0.74); border-radius: 15px">
     <div class="border-0 shadow-lg my-5">
         <div>
-            <!-- Nested Row within Card Body -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="p-5">
-                        <form class="user">
+                        <form class="user car_info_form">
                             <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                <div class="col-lg-2 form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleFirstName"
                                            placeholder="رقم اللوحة الأول">
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-lg-4 form-group">
                                     <input type="text" class="form-control form-control-user" id="exampleLastName"
                                            placeholder="رقم اللوحة الثاني">
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-lg-2 form-group">
                                     <button  class="btn btn-primary btn-user btn-block" id="search">
                                         بحث
                                     </button>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-lg-2 form-group">
                                     <button class="btn btn-primary btn-user btn-block" id="generate-qrcode">
                                         QRCode إنشاء
                                     </button>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-lg-2 form-group">
                                     <a href="index.html" class="btn btn-primary btn-user btn-block">الصفحة الرئيسية</a>
                                 </div>
                             </div>
@@ -86,60 +85,60 @@
                             </div>
                             <hr>-->
                             <div class="form-group row">
-                                <div class="col-sm-2"><p style="color: white"><b>اسم السيارة:</b></p></div>
-                                <div class="col-sm-4">
+                                <div class="col-lg-2 form-group"><p style="color: white"><b>الكيلومتر الحالي :</b></p></div>
+                                <div class="col-lg-4 form-group">
+                                    <p id="current_km"></p>
+                                </div>
+                                <div class="col-lg-2 form-group"><p style="color: white"><b>الموعد القادم :</b></p></div>
+                                <div class="col-lg-4 form-group">
+                                    <p id="next_km"></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row">
+                                <div class="col-lg-2 form-group"><p style="color: white"><b>تاريخ التبديل :</b></p></div>
+                                <div class="col-lg-4 form-group">
+                                    <p id="date_of_changing"></p>
+                                </div>
+                                <div class="col-lg-2 form-group"><p style="color: white"><b>الأقرب منهما :</b></p></div>
+                                <div class="col-lg-4 form-group">
+                                    <p id="chassis_number"></p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row">
+                                <div class="col-lg-2 form-group"><p style="color: white"><b>اسم السيارة:</b></p></div>
+                                <div class="col-lg-4 form-group">
                                     <p id="car_name"></p>
                                 </div>
-                                <div class="col-sm-2"><p style="color: white"><b>النوع :</b></p></div>
-                                <div class="col-sm-4">
+                                <div class="col-lg-2 form-group"><p style="color: white"><b>النوع :</b></p></div>
+                                <div class="col-lg-4 form-group">
                                     <p id="car_type_code"></p>
                                 </div>
 
                             </div>
                             <hr>
                             <div class="form-group row">
-                                <div class="col-sm-2"><p style="color: white"><b>اللون :</b></p></div>
-                                <div class="col-sm-4">
+                                <div class="col-lg-2 form-group"><p style="color: white"><b>اللون :</b></p></div>
+                                <div class="col-lg-4 form-group">
                                     <p id="car_color"></p>
                                 </div>
-                                <div class="col-sm-2"><p style="color: white"><b>الطراز :</b></p></div>
-                                <div class="col-sm-4">
+                                <div class="col-lg-2 form-group"><p style="color: white"><b>الطراز :</b></p></div>
+                                <div class="col-lg-4 form-group">
                                     <p id="car_model"></p>
                                 </div>
                             </div>
-                            <hr>
+                            <!--<hr>
                             <div class="form-group row">
-                                <div class="col-sm-2"><p style="color: white"><b> رقم اللوحة الأول :</b></p></div>
-                                <div class="col-sm-4">
+                                <div class="col-lg-2 form-group"><p style="color: white"><b> رقم اللوحة الأول :</b></p></div>
+                                <div class="col-lg-4 form-group">
                                     <p id="plate_first_number"></p>
                                 </div>
-                                <div class="col-sm-2"><p style="color: white"><b>رقم اللوحة الثاني :</b></p></div>
-                                <div class="col-sm-4">
+                                <div class="col-lg-2 form-group"><p style="color: white"><b>رقم اللوحة الثاني :</b></p></div>
+                                <div class="col-lg-4 form-group">
                                     <p id="plate_second_number"></p>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <div class="col-sm-2"><p style="color: white"><b>الكيلومتر الحالي :</b></p></div>
-                                <div class="col-sm-4">
-                                    <p id="current_km"></p>
-                                </div>
-                                <div class="col-sm-2"><p style="color: white"><b>الكيلومتر المتوقع :</b></p></div>
-                                <div class="col-sm-4">
-                                    <p id="next_km"></p>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <div class="col-sm-2"><p style="color: white"><b>تاريخ التغيير :</b></p></div>
-                                <div class="col-sm-4">
-                                    <p id="date_of_changing"></p>
-                                </div>
-                                <div class="col-sm-2"><p style="color: white"><b>رقم الهيكل :</b></p></div>
-                                <div class="col-sm-4">
-                                    <p id="chassis_number"></p>
-                                </div>
-                            </div>
+                            </div>-->
                         </form>
                     </div>
                 </div>
@@ -152,8 +151,12 @@
 <div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="custom-modal-content">
-        <span class="close">&times;</span>
-        <div class="qr-code" style="display: none;"></div>
+        <div class="qr-code" style="display: none;">
+            <button class="btn close_btn">إغلاق</button>
+            <button class="btn">
+                <a href="" download="qr_code_linq.png">تحميل</a>
+            </button>
+        </div>
     </div>
 
 </div>

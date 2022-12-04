@@ -90,14 +90,17 @@ button:hover {
 .qr-code button {
     display: flex;
     justify-content: center;
-    background-color: #3759b4;
+    background-color: DodgerBlue;
     font-family: 'Poppins', sans-serif;
-    color: #EAE6E5;
+    color: white;
     border: none;
     outline: none;
     width: 180px;
     height: 100%;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .qr-code button a {
@@ -137,6 +140,8 @@ button:hover {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin-top: 6px;
+    margin-right: 5px;
 }
 
 .close:hover,
@@ -144,4 +149,9 @@ button:hover {
     color: #000;
     text-decoration: none;
     cursor: default;
+}
+
+.container_fill_parent {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
