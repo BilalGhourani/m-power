@@ -58,10 +58,11 @@ $(document).ready(function () {
         $("#date_of_changing").text(data.dateOfChanges)//"14/07/2022");
         $("#user_name").text(data.username)//"655646444");
         $("#user_number").text(data.phone)//"655646444");
-        $("#chassis_number").text(data.chassis_number)//"655646444");
+        $("#nearestـdate").text(getNextYear(data.dateOfChanges))//"655646444");
     }
 
     function fillFakeData() {
+        var date="02/02/2022";
         $("#car_name").text("BMW");
         $("#plate_first_number").text("81");
         $("#car_type_code").text("X6");
@@ -70,10 +71,17 @@ $(document).ready(function () {
         $("#car_model").text("2016");
         $("#current_km").text("650000");
         $("#next_km").text("655000");
-        $("#date_of_changing").text("14/07/2022");
+        $("#date_of_changing").text(date);
         $("#user_name").text("Taha Hamdan");
         $("#user_number").text("965 9997 0480");
-        $("#chassis_number").text("655646444");
+        $("#nearestـdate").text(getNextYear(date));
+    }
+
+    function getNextYear(str) {
+        const [day, month, year] = str.split('/');
+        const date = new Date(+year + 1, month - 1, +day);
+        console.log(date);
+        return moment(date).format('DD/MM/YYYY');
     }
 
     $(".close_btn").click(function (e) {

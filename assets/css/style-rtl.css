@@ -1280,6 +1280,7 @@ section {
   text-align: left;
   padding: 15px;
   font-weight: 600;
+  text-align: right;
 }
 
 .contact .php-email-form .error-message br + br {
@@ -1293,6 +1294,7 @@ section {
   text-align: center;
   padding: 15px;
   font-weight: 600;
+  text-align: right;
 }
 
 .contact .php-email-form .loading {
