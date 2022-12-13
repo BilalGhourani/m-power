@@ -426,12 +426,13 @@ h6,
 #hero h2 {
   color: #fff;
   margin-bottom: 30px;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 900;
 }
 
 #hero p {
   width: 80%;
+  font-size: 25px;
   -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
   color: #fff;

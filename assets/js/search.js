@@ -88,6 +88,10 @@ $(document).ready(function () {
         document.querySelector("#myModal").style.display = "none";
     });
 
+    $(".close_result_btn").click(function (e) {
+        document.querySelector("#not_found_modal").style.display = "none";
+    });
+
     $("#generate-qrcode").click(function (e) {
         e.preventDefault();
         const fpv = document.querySelector("#exampleFirstName").value
